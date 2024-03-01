@@ -80,6 +80,52 @@ define :remixsecondloop do
   sleep 0.5
 end
 
+define :layer3 do
+  play :c4, amp: 0.5
+  play :e4, amp: 0.5
+  play :f4, amp: 0.5
+  sleep 0.5
+  play :c4, amp: 1
+  play :e4, amp: 1
+  play :f4, amp: 1
+  sleep 0.5
+  play :d4, amp: 1.5
+  play :e2, amp: 1.5
+  play :b3, amp: 1.5
+  sample :drum_cymbal_soft, amp: 0.5
+  sleep 0.5
+  play :d4, amp: 2
+  play :e2, amp: 2
+  play :b3, amp: 2
+  sample :drum_cymbal_soft, amp: 0.5
+  sleep 0.5
+  #+beat
+  play :c4, amp: 0.5
+  play :e4, amp: 0.5
+  play :f4, amp: 0.5
+  sleep 0.5
+  play :c4, amp: 1
+  play :e4, amp: 1
+  play :f4, amp: 1
+  sleep 0.5
+  play :d4, amp: 1.5
+  play :e2, amp: 1.5
+  play :b2, amp: 1.5
+  sample :drum_cymbal_soft, amp: 0.5
+  sleep 1
+  play :e4
+  play :e2
+  sleep 0.5
+  play :d4, amp: 2
+  play :e2, amp: 2
+  play :b2, amp: 2
+  sample :drum_cymbal_soft, amp: 0.5
+  sleep 1
+  play :e4
+  play :e2
+  sleep 0.5
+end
+
 1.times do
   #Measure1&2
   intro
@@ -127,7 +173,7 @@ end
   sleep 0.5
   sample indubitably
   sleep 14
-  #sound2remix
+  #layer2
   sample :vinyl_rewind
   sleep 3
   play :g4
@@ -170,47 +216,8 @@ end
 sleep 15
 live_loop :end do
   #Layer3
-  play :c4, amp: 0.5
-  play :e4, amp: 0.5
-  play :f4, amp: 0.5
-  sleep 0.5
-  play :c4, amp: 1
-  play :e4, amp: 1
-  play :f4, amp: 1
-  sleep 0.5
-  play :d4, amp: 1.5
-  play :e2, amp: 1.5
-  play :b3, amp: 1.5
-  sample :drum_cymbal_soft, amp: 0.5
-  sleep 0.5
-  play :d4, amp: 2
-  play :e2, amp: 2
-  play :b3, amp: 2
-  sample :drum_cymbal_soft, amp: 0.5
-  sleep 0.5
-  #+beat
-  play :c4, amp: 0.5
-  play :e4, amp: 0.5
-  play :f4, amp: 0.5
-  sleep 0.5
-  play :c4, amp: 1
-  play :e4, amp: 1
-  play :f4, amp: 1
-  sleep 0.5
-  play :d4, amp: 1.5
-  play :e2, amp: 1.5
-  play :b2, amp: 1.5
-  sample :drum_cymbal_soft, amp: 0.5
-  sleep 1
-  play :e4
-  play :e2
-  sleep 0.5
-  play :d4, amp: 2
-  play :e2, amp: 2
-  play :b2, amp: 2
-  sample :drum_cymbal_soft, amp: 0.5
-  sleep 1
-  play :e4
-  play :e2
-  sleep 0.5
+  10.times do
+    layer3
+  end
+  stop
 end
