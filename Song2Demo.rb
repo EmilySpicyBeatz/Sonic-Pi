@@ -1,9 +1,10 @@
 #Song 2
 #https://musescore.com/musifications/fit-right-in-from-hasbro-s-my-little-pony-a-new-generation-alan-schmuckler-michael-mahler-fit-right-in-from-hasbro-s-my-little-pony-a-new-generation
-
 snap="C:/Users/emily_miller/Pictures/Screenshots/Snap sound effect (cinematic).mp3"
 FRI1="C:/Users/emily_miller/Pictures/Screenshots/FRI1.mp3"
 FRI2="C:/Users/emily_miller/Pictures/Screenshots/FRI2.mp3"
+FRI3="C:/Users/emily_miller/Pictures/Screenshots/FRI3.mp3"
+NWAL="C:/Users/emily_miller/Pictures/Screenshots/NWAL.mp3"
 
 use_bpm 173
 #-------------------------------
@@ -42,10 +43,12 @@ sleep 20
 live_loop :samples do
   sample FRI1
   sleep 12.5
-  sample FRI2
+  sample FRI2, amp: 1
+  sleep 12.5
+  sample FRI3
   sleep 12.5
 end
-2.times do
+live_loop :layer2 do
   #Measure 3
   play :bb6, amp: 0.5
   play :bb5, amp: 0.5
@@ -77,5 +80,4 @@ end
   play :bb4
   play :bb2
   sleep 2
-  #Measure 5
 end
