@@ -5,8 +5,17 @@ FRI1="C:/Users/emily_miller/Pictures/Screenshots/FRI1.mp3"
 FRI2="C:/Users/emily_miller/Pictures/Screenshots/FRI2.mp3"
 FRI3="C:/Users/emily_miller/Pictures/Screenshots/FRI3.mp3"
 NWAL="C:/Users/emily_miller/Pictures/Screenshots/NWAL.mp3"
+crash="C:/Users/emily_miller/Pictures/Screenshots/Crash.mp3"
+glissando="C:/Users/emily_miller/Pictures/Screenshots/glissan.mp3"
 
 use_bpm 173
+audi = [FRI1, FRI2, FRI3]
+i = 0
+define :layer3 do |x, y|
+  play x
+  play y
+  sleep 0.25
+end
 #-------------------------------
 #Fade in
 #Measure 1
@@ -40,14 +49,16 @@ live_loop :layer1 do
   sample snap, amp: 3
 end
 sleep 20
-live_loop :samples do
-  sample FRI1
-  sleep 12.5
-  sample FRI2, amp: 1
-  sleep 12.5
-  sample FRI3
-  sleep 12.5
+#--------------------
+live_loop :samps do
+  4.times do
+    sample audi[i]
+    sleep 12.5
+    i = i + 1
+  end
+  i = 0
 end
+#--------------------
 live_loop :layer2 do
   #Measure 3
   play :bb6, amp: 0.5
@@ -80,4 +91,19 @@ live_loop :layer2 do
   play :bb4
   play :bb2
   sleep 2
+end
+sleep 60
+sample NWAL, amp: 3
+sleep 5
+sample crash, amp: 3
+sleep 10
+live_loop :layer3 do
+  layer3 :g5, :a3
+  sleep 0.15
+  layer3 :g5, :a2
+  sleep 0.15
+  layer3 :g5, :f4
+  sleep 0.15
+  layer3 :bb4, :e2
+  sleep 0.15
 end
