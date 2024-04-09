@@ -9,14 +9,14 @@ crash="C:/Users/emily_miller/Pictures/Screenshots/Crash.mp3"
 glissando="C:/Users/emily_miller/Pictures/Screenshots/glissan.mp3"
 
 use_bpm 173
-audi = [FRI1, FRI2, FRI3]
+audi = [FRI1, FRI2, FRI3, FRI1, FRI2, FRI3, FRI1, FRI2, FRI3]
 i = 0
 define :layer3 do |x, y|
   play x
   play y
   sleep 0.25
 end
-#-------------------------------
+#--------------------
 #Fade in
 #Measure 1
 live_loop :layer1 do
@@ -51,12 +51,12 @@ end
 sleep 20
 #--------------------
 live_loop :samps do
-  4.times do
+  9.times do
     sample audi[i]
     sleep 12.5
     i = i + 1
   end
-  i = 0
+  stop
 end
 #--------------------
 live_loop :layer2 do
@@ -92,6 +92,7 @@ live_loop :layer2 do
   play :bb2
   sleep 2
 end
+#--------------------
 sleep 60
 sample NWAL, amp: 3
 sleep 5
