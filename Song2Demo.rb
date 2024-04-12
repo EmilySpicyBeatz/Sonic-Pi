@@ -20,33 +20,36 @@ end
 #Fade in
 #Measure 1
 live_loop :layer1 do
-  play :c3, amp: 0.5
-  play :c4, amp: 0.5
-  play :c3, amp: 0.5
-  sleep 1.5
-  play :c3, amp: 1
-  play :c4, amp: 1
-  play :c3, amp: 1
-  sleep 1.5
-  play :bb2, amp: 1.5
-  play :bb4, amp: 1.5
-  play :bb2, amp: 1.5
-  sleep 1
-  #Measure 2
-  sleep 2.5
-  play :g2, amp: 2
-  play :bb3, amp: 2
-  play :g2, amp: 2
-  sleep 0.5
-  play :bb2, amp: 2.5
-  play :bb4, amp: 2.5
-  play :bb2, amp: 2.5
-  sleep 0.5
-  play :b2, amp: 3
-  play :b3, amp: 3
-  play :b2, amp: 3
-  sleep 0.5
-  sample snap, amp: 3
+  9.times do
+    play :c3, amp: 0.5
+    play :c4, amp: 0.5
+    play :c3, amp: 0.5
+    sleep 1.5
+    play :c3, amp: 1
+    play :c4, amp: 1
+    play :c3, amp: 1
+    sleep 1.5
+    play :bb2, amp: 1.5
+    play :bb4, amp: 1.5
+    play :bb2, amp: 1.5
+    sleep 1
+    #Measure 2
+    sleep 2.5
+    play :g2, amp: 2
+    play :bb3, amp: 2
+    play :g2, amp: 2
+    sleep 0.5
+    play :bb2, amp: 2.5
+    play :bb4, amp: 2.5
+    play :bb2, amp: 2.5
+    sleep 0.5
+    play :b2, amp: 3
+    play :b3, amp: 3
+    play :b2, amp: 3
+    sleep 0.5
+    sample snap, amp: 3
+  end
+  stop
 end
 sleep 20
 #--------------------
@@ -61,50 +64,55 @@ end
 #--------------------
 live_loop :layer2 do
   #Measure 3
-  play :bb6, amp: 0.5
-  play :bb5, amp: 0.5
-  play :bb5, amp: 0.5
-  play :g3, amp: 0.5
-  play :g2, amp: 0.5
-  #bb
-  sleep 3
-  play :bb6
-  sleep 0.5
-  play :bb6
-  sleep 1
-  play :bb6
-  sleep 1
-  play :bb6
-  sleep 1
-  play :bb7
-  sleep 2
-  #Measure 4
-  play :c3
-  play :c4
-  play :c3
-  sleep 1.5
-  play :c3
-  play :c4
-  play :c3
-  sleep 1.5
-  play :bb2
-  play :bb4
-  play :bb2
-  sleep 2
+  9.times do
+    play :bb6, amp: 0.5
+    play :bb5, amp: 0.5
+    play :bb5, amp: 0.5
+    play :g3, amp: 0.5
+    play :g2, amp: 0.5
+    #bb
+    sleep 3
+    play :bb6
+    sleep 0.5
+    play :bb6
+    sleep 1
+    play :bb6
+    sleep 1
+    play :bb6
+    sleep 1
+    play :bb7
+    sleep 2
+    #Measure 4
+    play :c3
+    play :c4
+    play :c3
+    sleep 1.5
+    play :c3
+    play :c4
+    play :c3
+    sleep 1.5
+    play :bb2
+    play :bb4
+    play :bb2
+    sleep 2
+  end
+  stop
 end
 #--------------------
-sleep 60
+sleep 120
 sample NWAL, amp: 3
 sleep 5
-sample crash, amp: 3
-sleep 10
 live_loop :layer3 do
-  layer3 :g5, :a3
-  sleep 0.15
-  layer3 :g5, :a2
-  sleep 0.15
-  layer3 :g5, :f4
-  sleep 0.15
-  layer3 :bb4, :e2
-  sleep 0.15
+  10.times do
+    layer3 :g5, :a3
+    sleep 0.15
+    layer3 :g5, :a2
+    sleep 0.15
+    layer3 :g5, :f4
+    sleep 0.15
+    layer3 :bb4, :e2
+    sleep 0.15
+  end
+  stop
 end
+sample crash, amp: 3
