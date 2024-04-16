@@ -72,12 +72,13 @@ define :remixsecondloop do
   play :a4
   play :c5
   sleep 0.5
-  10.times do
+  6.times do
     play gliss, amp: 1
     sleep 0.5
     gliss = gliss + 1
   end
   sleep 0.5
+  stop
 end
 
 define :layer3 do
